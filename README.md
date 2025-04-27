@@ -1,11 +1,11 @@
 # zabbix-agent-on-RasPi
 Script and template for zabbix-agent to run on raspberryPi.
 I assume you already installed zabbix-agent
-`sudo apt install zabbix-agent`
+`sudo apt install zabbix-agent2`
 
 Fetch script from GitHub:
 ```
-wget https://raw.githubusercontent.com/bobbolous/zabbix-agent-on-RasPi/master/raspberrypi.sh
+wget https://raw.githubusercontent.com/levonti/zabbix-agent-on-RasPi/master/raspberrypi.sh
 ```
 
 Create script location:
@@ -36,7 +36,7 @@ $ /etc/zabbix/scripts/raspberrypi.sh temperature
 
 Add script to zabbix configuration file:
 ```
-sudo nano /etc/zabbix/zabbix_agentd.conf
+sudo nano /etc/zabbix/zabbix_agent2.d/raspberry.conf
 ```
 
 Adding the following line:
@@ -46,7 +46,7 @@ UserParameter=raspberrypi.sh[*],/etc/zabbix/scripts/raspberrypi.sh $1
 
 Restart the zabbix agent:
 ```
-sudo service zabbix-agent restart
+sudo systemctl restart zabbix-agent2
 ```
 
 Import the Template in your Zabbix Server frontend.
