@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>4.4</version>
-    <date>2020-05-26T11:59:57Z</date>
+    <version>7.0</version>
+    <date>2025-04-27T11:59:57Z</date>
     <value_maps>
         <value_map>
             <name>RPI board version</name>
@@ -113,6 +113,10 @@
                 <mapping>
                     <value>c03112</value>
                     <newvalue>4B rev 1.2 4GB</newvalue>
+                </mapping>
+                <mapping>
+                    <value>d04171</value>
+                    <newvalue>5B rev 1.1 8GB</newvalue>
                 </mapping>
             </mappings>
         </value_map>
