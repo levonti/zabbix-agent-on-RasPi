@@ -121,7 +121,11 @@ case "$1" in
 		        # https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=147781&start=50#p972790
                 /usr/bin/vcgencmd get_throttled | sed s/"throttled="//g | perl -e '$number = hex(<STDIN>); printf "%.32b\n", $number'
                 ;;
+        fan)
+                # FAN rpm
+                cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input
+                ;;
         *)
-                echo "Usage: $N {boardrevision|boardversion|boardserialnumber|coreclock|cpuvoltage|cpuclock|h264clock|ispclock|v3dclock|uartclock|pwmclock|emmcclock|pixelclock|vecclock|hdmiclock|dpiclock|cpumem|firmwareversion|gpumem|sdcardtotalsize|sdcardused|sdcardusedpercent|sdcardfree|sdramcvoltage|sdramivoltage|sdrampvoltage|temperature}" >&2
+                echo "Usage: $N {boardrevision|boardversion|boardserialnumber|coreclock|cpuvoltage|cpuclock|fan|h264clock|ispclock|v3dclock|uartclock|pwmclock|emmcclock|pixelclock|vecclock|hdmiclock|dpiclock|cpumem|firmwareversion|gpumem|sdcardtotalsize|sdcardused|sdcardusedpercent|sdcardfree|sdramcvoltage|sdramivoltage|sdrampvoltage|temperature}" >&2
 esac
 exit 0
